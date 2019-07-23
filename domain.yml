@@ -1,0 +1,132 @@
+intents:
+  # add your intents
+  - greet
+  - thank
+  - bye
+  - deny
+  - affirm
+  - trigger_jenkinsjob
+  - trigger_deploy
+  - check_service
+  - check_JIRA_Status
+  - create_JIRA_request
+  - request_restaurant
+  - inform
+  - ask_access
+  - env_inform
+  - check_word
+  - check_codecoverage
+  
+entities:
+  # replace with your entities
+  - example_entity
+  - jenkinsjob
+  - environment
+  - servicename
+  - word
+  - codecoverageapp
+  - JIRAID
+  - summary
+  - description
+  - priority
+  - requesterdepartment
+  - access
+
+
+slots:
+  # replace with your slots
+  jenkinsjob:
+    type: text
+  environment:
+    type: text
+  appname:
+    type: text  
+  servicename:
+    type: text
+  word:
+    type: text
+  JIRAID:
+    type: text
+  summary:
+    type: text
+  description:
+    type: text
+  priority:
+    type: text
+  requesterdepartment:
+    type: text
+  access:
+    type: text
+  codecoverageapp:
+    type: text
+  requested_slot:
+    type: unfeaturized
+
+
+templates:
+  # templates the bot should respond with
+  utter_greet:
+    - "Hey, how can I help you?"
+  utter_thank:
+    - "You're welcome!"
+  utter_bye:
+    - "Goodbye"
+  utter_ask_jenkinsjob:
+    - "For which jenkins job?"
+  utter_ask_word:
+    - "Which document you want me to find?"
+  utter_check_codecoverage:
+    - "Yes, ofcourse! For which repository?"
+ # utter_ask_appname:
+ #  - "For which appname?"
+  utter_ask_environment:
+    - "For which environment?"
+  utter_ask_servicename:
+    - "For which application or service?"
+  utter_anythingelse:
+    - "Is there anything else I can help you with?"
+  utter_done:
+    - "Done!"
+  utter_unknown:
+    - "Sorry, I dont recognise what you say!" 
+  utter_ask_ID:
+    - "For which ID?"
+  utter_ask_summary:
+    - "What is the summary of the issue?"
+  utter_ask_description:
+    - "What is the description of the issue?"
+  utter_ask_requestpriority:
+    - "Please select seerity of the ticket. e.g. High or Medium or Low"
+  utter_ask_requesterdepartment:
+    - "May I know your team name?"
+  utter_ask_JIRAID:
+    - "What's the JIRA_ID ?"
+
+actions:
+  # all the utter actions from the templates, plus any custom actions
+  - utter_greet
+  - utter_thank
+  - utter_bye
+  - utter_ask_jenkinsjob
+  - utter_ask_environment
+  - utter_ask_word
+  - utter_ask_servicename
+  - utter_check_codecoverage
+  - utter_anythingelse
+  - utter_done
+  - utter_unknown
+  - utter_ask_ID
+  - actions.ActionCheckWord
+  - actions.ActionCheckService
+  - actions.ActionStartJenkinsBuildWithParams
+  - actions.ActionStartJenkinsBuild
+  - actions.ActionGetJIRAStatus
+  - actions.ActionGetJIRACreate
+  - actions.ActionSearchRestaurants
+  - actions.ActionRestarted
+  - actions.ActionCodeCoverage
+#  - actions.ActionRequestAccess
+#  - action_jenkins
+#  - action_jenkins_param
+#  - action_jenkinstrigger
+#  - action_deploy

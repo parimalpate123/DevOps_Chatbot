@@ -1,0 +1,8 @@
+{
+  "pipeline":"spacy_sklearn",
+  "path":"./models/current/nlu",
+  "data":"./data/nlu_data.json",
+  "server_model_dirs": {
+  "default" : "./models/current/nlu"
+  }
+}
